@@ -29,7 +29,7 @@ public class logiSisse {
         Button sisene = new Button("Sisene");
         Label teade = new Label ("Vale parool");
 
-        vbox.getChildren().addAll(kasutaja, kasutajaNimi, parool, kasutajaParool, sisene);
+        vbox.getChildren().addAll(kasutaja, kasutajaNimi, parool, kasutajaParool, sisene, teade);
 
         stage.setScene(scene);
         stage.show();

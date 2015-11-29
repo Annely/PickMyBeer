@@ -27,6 +27,12 @@ public class Tutvustus {
         tutvustus.setScene(tereTulemast);
         tutvustus.show();
 
+        alusta.setOnAction(event -> {
+                    tutvustus.close();
+                    new Test();
+                }
+        );
+
 
 
 
