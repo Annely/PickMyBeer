@@ -27,7 +27,7 @@ public class logiSisse {
         Label parool = new Label("Parool");
         PasswordField kasutajaParool = new PasswordField();
         Button sisene = new Button("Sisene");
-        Label teade = new Label ("Vale parool");
+        Label teade = new Label ();
 
         vbox.getChildren().addAll(kasutaja, kasutajaNimi, parool, kasutajaParool, sisene, teade);
 

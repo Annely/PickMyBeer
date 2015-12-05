@@ -12,8 +12,9 @@ import java.util.ArrayList;
  * Created by Annely on 24.11.2015.
  */
 public class Test {
+    static ArrayList<Integer> tulemused = new ArrayList<>();
     Stage test = new Stage();
-    ArrayList tulemused = new ArrayList();
+
 
     Test() {
         VBox kysimus1 = new VBox();
