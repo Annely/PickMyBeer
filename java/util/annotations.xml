@@ -1,0 +1,8 @@
+<root>
+  <item name='java.util.Map.Entry V getValue()'>
+    <annotation name='org.jetbrains.annotations.NotNull'/>
+  </item>
+  <item name='java.util.TreeMap java.util.Map.Entry&lt;K,V&gt; pollLastEntry()'>
+    <annotation name='org.jetbrains.annotations.NotNull'/>
+  </item>
+</root>
