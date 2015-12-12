@@ -80,7 +80,6 @@ public class Test {
         kevad.setOnAction(event -> {
             tulemused.add(2);
             tulemused.add(9);
-            tulemused.add(8);
             tulemused.add(10);
             test.setScene(kysimused2);
 
@@ -205,7 +204,6 @@ public class Test {
         puuvili.setOnAction(event -> {
             tulemused.add(2);
             tulemused.add(9);
-            tulemused.add(8);
             tulemused.add(10);
             test.setScene(kysimused6);
 
@@ -222,7 +220,6 @@ public class Test {
             tulemused.add(4);
             tulemused.add(5);
             tulemused.add(6);
-            tulemused.add(7);
             test.setScene(kysimused6);
         });
 
