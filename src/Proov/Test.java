@@ -18,53 +18,53 @@ public class Test {
 
     Test() {
         VBox kysimus1 = new VBox();
-        Scene kysimused1 = new Scene( kysimus1, 400, 400);
-        Label kyss1 = new Label("Väljas võib küll sadada lumi, kuid mis aastaaega väjendab hetkel sinu meeleolu?");
+        Scene kysimused1 = new Scene( kysimus1, 600, 600);
+        Label kyss1 = new Label("VÃ¤ljas vÃµib kÃ¼ll sadada lumi, kuid mis aastaaega vÃ¤jendab hetkel sinu meeleolu?");
         Button kevad = new Button("Kevad");
         Button suvi = new Button("Suvi");
-        Button sygis = new Button("Sügis");
+        Button sygis = new Button("SÃ¼gis");
         Button talv = new Button("Talv");
         kysimus1.getChildren().addAll(kyss1, kevad, suvi, sygis, talv);
 
         VBox kysimus2 = new VBox();
-        Scene kysimused2 = new Scene(kysimus2, 400, 400);
-        Label kyss2 = new Label("Mis täna plaanis?");
+        Scene kysimused2 = new Scene(kysimus2, 600, 600);
+        Label kyss2 = new Label("Mis tÃ¤na plaanis?");
         Button purju = new Button("Pildituks!");
-        Button chill = new Button("Hängime tüdrukutega");
+        Button chill = new Button("HÃ¤ngime tÃ¼drukutega");
         Button poisid = new Button("Chillime poistega");
         Button yksi = new Button("Kodus koos kassiga");
         kysimus2.getChildren().addAll(kyss2, purju, chill, poisid, yksi);
 
         VBox kysimus3 = new VBox();
-        Scene kysimused3 = new Scene(kysimus3, 400, 400);
+        Scene kysimused3 = new Scene(kysimus3, 600, 600);
         Label kyss3 = new Label("Millist neist eelistad?");
         Button vein = new Button("Valge poolkuiv vein");
-        Button kokteilid = new Button("Värvilised kokteilid");
-        Button olu = new Button("Ainult õlu, aitäh");
-        Button viski = new Button("Viski");
+        Button kokteilid = new Button("VÃ¤rvilised kokteilid");
+        Button olu = new Button("Ainult Ãµlu, aitÃ¤h");
+        Button viski = new Button("Viski jÃ¤Ã¤ga");
         kysimus3.getChildren().addAll(kyss3, vein, kokteilid, olu, viski);
 
         VBox kysimus4 = new VBox();
-        Scene kysimused4 = new Scene(kysimus4, 400, 400);
+        Scene kysimused4 = new Scene(kysimus4, 600, 600);
         Label kyss4 = new Label("Mis tuju sul hetkel on?");
-        Button roomus = new Button("Väga hea");
+        Button roomus = new Button("VÃ¤ga hea");
         Button kehv = new Button("Kehvapoolne");
         Button neutraalne = new Button("Meh.. ");
         Button kuri = new Button("Kuri");
         kysimus4.getChildren().addAll(kyss4, roomus, kehv, neutraalne, kuri);
 
         VBox kysimus5 = new VBox();
-        Scene kysimused5 = new Scene(kysimus5, 400, 400);
-        Label kyss5 = new Label("Mille järgi isutab?");
+        Scene kysimused5 = new Scene(kysimus5, 600, 600);
+        Label kyss5 = new Label("Mille jÃ¤rgi isutab?");
         Button puuvili = new Button("Puuviljasalat");
-        Button leivad = new Button("Küüslauguleivad");
+        Button leivad = new Button("KÃ¼Ã¼slauguleivad");
         Button sushi = new Button("Sushi");
         Button kook = new Button("Shokolaadikook");
         kysimus5.getChildren().addAll(kyss5, puuvili, leivad, sushi, kook);
 
         VBox kysimus6 = new VBox();
-        Scene kysimused6 = new Scene(kysimus6, 400, 400);
-        Label kyss6 = new Label("Mille järgi isutab?");
+        Scene kysimused6 = new Scene(kysimus6, 600, 600);
+        Label kyss6 = new Label("Vali lemmik superstaar?");
         Button liis = new Button("Liis Lemsalu");
         Button edgar = new Button("Edgar Savisaar");
         Button andrus = new Button("Andrus Veerpalu");
@@ -75,7 +75,7 @@ public class Test {
         test.setScene(kysimused1);
         test.show();
 
-        //ESIMENE KÜSIMUS
+        //ESIMENE Kï¿½SIMUS
 
         kevad.setOnAction(event -> {
             tulemused.add(2);
@@ -104,7 +104,7 @@ public class Test {
            test.setScene(kysimused3);
        });
 
-        //TEINE KÜSIMUS
+        //TEINE Kï¿½SIMUS
 
         purju.setOnAction(event -> {
             tulemused.add(2);
@@ -137,7 +137,7 @@ public class Test {
             test.setScene(kysimused3);
         });
 
-        // KOLMAS KÜSIMUS
+        // KOLMAS Kï¿½SIMUS
 
         vein.setOnAction(event -> {
             tulemused.add(1);
@@ -169,7 +169,7 @@ public class Test {
             test.setScene(kysimused4);
         });
 
-        //NELJAS KÜSIMUS
+        //NELJAS Kï¿½SIMUS
         roomus.setOnAction(event -> {
             tulemused.add(2);
             tulemused.add(9);
@@ -200,7 +200,7 @@ public class Test {
             test.setScene(kysimused5);
         });
 
-        //VIIES KÜSIMUS
+        //VIIES Kï¿½SIMUS
         puuvili.setOnAction(event -> {
             tulemused.add(2);
             tulemused.add(9);
@@ -229,7 +229,7 @@ public class Test {
             test.setScene(kysimused6);
         });
 
-        //KUUES KÜSIMUS
+        //KUUES Kï¿½SIMUS
         liis.setOnAction(event -> {
             tulemused.add(8);
             tulemused.add(6);
@@ -272,9 +272,9 @@ public class Test {
 
                      /**
                 * On ArrayList, mis koosneb numbritest 1-10
-                * Iga küsimuse iga vastus salvestab tulemusse teatud numbrid ArrayListist
-                * Tulemus kogub endasse need arvud ja leiab kõige sagedamini esineva(d) numbri(d)
-                * Järgmisel lehel tõlgitakse iga number õlleks
+                * Iga kï¿½simuse iga vastus salvestab tulemusse teatud numbrid ArrayListist
+                * Tulemus kogub endasse need arvud ja leiab kï¿½ige sagedamini esineva(d) numbri(d)
+                * Jï¿½rgmisel lehel tï¿½lgitakse iga number ï¿½lleks
                 *
                 */
 

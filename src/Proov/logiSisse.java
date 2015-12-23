@@ -28,6 +28,7 @@ public class logiSisse {
         PasswordField kasutajaParool = new PasswordField();
         Button sisene = new Button("Sisene");
         Label teade = new Label ();
+        String sina = kasutajaNimi.getText();
 
         vbox.getChildren().addAll(kasutaja, kasutajaNimi, parool, kasutajaParool, sisene, teade);
 
@@ -36,7 +37,6 @@ public class logiSisse {
 
         sisene.setOnAction(event -> {
                     String heaParool = kasutajaParool.getText();
-                    String sina = kasutajaNimi.getText();
                     if (heaParool.equals("Hindeks5")) {
                         stage.close();
                         new Tutvustus();

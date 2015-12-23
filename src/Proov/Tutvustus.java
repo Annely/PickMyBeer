@@ -14,16 +14,18 @@ import javafx.stage.Stage;
 public class Tutvustus {
     Stage tutvustus=new Stage();
 
+
     Tutvustus() {
         VBox teine= new VBox();
         Scene tereTulemast = new Scene(teine, 400, 400);
-        //tahan siin kasutada kasutajanime BUT DON*T KNOW HOW
-        //Ja �ldse tuleb siia rohkem teksti ja n�eb parem v�lja
-        Label tekst = new Label("Loodetavasti oled valmis");
-        tekst.setAlignment(Pos.TOP_CENTER);
+        Label tekst = new Label("Tere Sina!");
+        Label tekst2 = new Label ("Testi eesmärgiks on hinnata sinu meeleolu ja maitseeelistusi");
+        Label tekst3 = new Label("ning pakkuda selle põhjal sulle sobivaima Eesti käsitööõlle");
+        Label tekst4 = new Label("PS: Test ei pretendeeri absoluutsele tõele");
+        teine.setAlignment(Pos.TOP_CENTER);
         Button alusta = new Button("Alusta testiga!");
         alusta.setAlignment(Pos.CENTER);
-        teine.getChildren().addAll(tekst, alusta);
+        teine.getChildren().addAll(tekst, tekst2, tekst3, alusta, tekst4);
         tutvustus.setScene(tereTulemast);
         tutvustus.show();
 
