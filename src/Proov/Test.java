@@ -4,8 +4,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -17,7 +15,7 @@ import java.util.ArrayList;
  * Created by Annely on 24.11.2015.
  */
 public class Test {
-    static ArrayList<Integer> tulemused = new ArrayList<>();
+  static ArrayList<Integer> tulemused = new ArrayList<>();
     Stage test = new Stage();
 
 

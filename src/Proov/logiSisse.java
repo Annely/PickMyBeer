@@ -37,8 +37,8 @@ public class logiSisse {
         sisene.setOnAction(event -> {
                     String heaParool = kasutajaParool.getText();
                     if (heaParool.equals("Hindeks5")) {
-                        String sina = kasutajaNimi.getText();
-                        System.out.println(sina);
+                        String sisestatudParool = kasutajaParool.getText();
+                        System.out.println(sisestatudParool);
                         stage.close();
                         new Tutvustus();
                     } else {
