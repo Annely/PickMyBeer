@@ -21,7 +21,8 @@ import java.util.ArrayList;
  */
 public class TulemustePrint {
     ArrayList<Integer> populaarseim = Tulemused.populaarseim;
-    static int valitud;
+    static double valitud;
+    double keskmineHinne = Hinne.keskmineHinne;
 
     TulemustePrint(){
         looAken();
@@ -51,30 +52,38 @@ public class TulemustePrint {
         kolm.setToggleGroup(hinne);
         neli.setToggleGroup(hinne);
         viis.setToggleGroup(hinne);
+        Button hinda = new Button("Hinda");
 
-        tabel.getChildren().addAll(tagasiside, yks, kaks, kolm, neli, viis);
-        if (yks.isSelected()) {
-            valitud = 1;
-            new Hinne();
-        } else if (kaks.isSelected()) {
-            valitud=2;
-            new Hinne();
-        }else if (kolm.isSelected()) {
-            valitud = 3;
-            new Hinne();
-        } else if (neli.isSelected()) {
-            valitud = 4;
-            new Hinne();
-        }else if (viis.isSelected()) {
-            valitud=5;
-            new Hinne();
-        }
+        tabel.getChildren().addAll(tagasiside, yks, kaks, kolm, neli, viis, hinda);
+        hinda.setOnAction(event -> {
+                    if (yks.isSelected()) {
+                        valitud = 1;
+                        new Hinne();
+                    } else if (kaks.isSelected()) {
+                        valitud=2;
+                        new Hinne();
+                    }else if (kolm.isSelected()) {
+                        valitud = 3;
+                        new Hinne();
+                    } else if (neli.isSelected()) {
+                        valitud = 4;
+                        new Hinne();
+                    }else if (viis.isSelected()) {
+                        valitud=5;
+                        new Hinne();
+                    }
+
+
+             });
+
 
 
 
         pane.add(tabel, 5, 1);
         lopp.setScene(lopetamine);
         lopp.show();
+
+        if(populaarseim.size()<5){
         for (int i = 0; i < populaarseim.size(); i++) {
             if (populaarseim.get(i).equals(1)) {
                 Label olu1 = new Label("Lehe Blackmouth Cur");
@@ -141,7 +150,7 @@ public class TulemustePrint {
                 pane.add(label9, 1, i+1);
             } else if (populaarseim.get(i).equals(10)) {
                 Label olu10 = new Label("Raasiku õlletehas Verner meeõlu");
-                Image pilt10 = new Image(getClass().getResourceAsStream("Raasiku meeõlu.jpg"));
+                Image pilt10 = new Image(getClass().getResourceAsStream("Raasiku meeolu.png"));
                 Label label10 = new Label();
                 label10.setGraphic(new ImageView(pilt10));
                 pane.add(olu10, 0, i+1);
@@ -152,5 +161,14 @@ public class TulemustePrint {
         lopp.show();
 
     }
+        else {
+            Label uus = new Label ("Liiga palju tulemusi, proovi veel");
+            Button tagasi = new Button("Tagasi algusesse");
+            pane.add(uus, 0, 1);
+            pane.add(tagasi, 0, 2);
+
+        }
+
+        }
 
 }
