@@ -21,6 +21,7 @@ import java.util.ArrayList;
  */
 public class TulemustePrint {
     ArrayList<Integer> populaarseim = Tulemused.populaarseim;
+    static int valitud;
 
     TulemustePrint(){
         looAken();
@@ -50,16 +51,24 @@ public class TulemustePrint {
         kolm.setToggleGroup(hinne);
         neli.setToggleGroup(hinne);
         viis.setToggleGroup(hinne);
-        viis.setSelected(true);
-        Button hinda = new Button("Hinda");
-        tabel.getChildren().addAll(tagasiside, yks, kaks, kolm, neli, viis, hinda);
-        hinda.setOnAction(event -> {
-                    new Hinne();
-                    String sql = 
 
-                }
-        );
-
+        tabel.getChildren().addAll(tagasiside, yks, kaks, kolm, neli, viis);
+        if (yks.isSelected()) {
+            valitud = 1;
+            new Hinne();
+        } else if (kaks.isSelected()) {
+            valitud=2;
+            new Hinne();
+        }else if (kolm.isSelected()) {
+            valitud = 3;
+            new Hinne();
+        } else if (neli.isSelected()) {
+            valitud = 4;
+            new Hinne();
+        }else if (viis.isSelected()) {
+            valitud=5;
+            new Hinne();
+        }
 
 
 

@@ -16,9 +16,7 @@ public class Main extends Application{
 }
 /**
  * Logimine
- *
  * Tutvustus
  * Test
  * Tulemused
- *
  */

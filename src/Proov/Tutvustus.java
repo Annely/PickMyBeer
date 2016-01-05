@@ -1,6 +1,7 @@
 package Proov;
 
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -14,6 +15,7 @@ import javafx.stage.Stage;
  */
 public class Tutvustus {
     Stage tutvustus=new Stage();
+    String nimi = logiSisse.sina;
 
 
     Tutvustus() {
@@ -23,25 +25,19 @@ public class Tutvustus {
         Image taust = new Image(getClass().getResourceAsStream("taustapilt.jpg"));
         Label pilt = new Label();
         pilt.setGraphic(new ImageView(taust));
-        Label tekst = new Label("Tere Sina!");
+        Label tekst = new Label("Tere," +nimi+"!");
         Label tekst2 = new Label ("Testi eesmärgiks on hinnata sinu meeleolu ja maitseeelistusi");
         Label tekst3 = new Label("ning pakkuda selle põhjal sulle sobivaima Eesti käsitööõlle");
         Label tekst4 = new Label("PS: Test ei pretendeeri absoluutsele tõele");
         teine.setAlignment(Pos.TOP_CENTER);
-        Button alusta = new Button("Alusta testiga!");
-        alusta.setAlignment(Pos.CENTER);
-        teine.getChildren().addAll(tekst, tekst2, tekst3, alusta, tekst4, pilt);
+        teine.getChildren().addAll(tekst, tekst2, tekst3, tekst4, pilt);
         tutvustus.setScene(tereTulemast);
         tutvustus.show();
-
-        alusta.setOnAction(event -> {
-                    tutvustus.close();
-                    new Test();
-                }
-        );
-
-
-
+        pilt.setCursor(Cursor.HAND);
+        pilt.setOnMouseClicked(event1 -> {
+            tutvustus.close();
+            new Test();
+        });
 
     }
 

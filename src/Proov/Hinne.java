@@ -1,15 +1,13 @@
 package Proov;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * Created by Annely on 5.01.2016.
  */
 public class Hinne {
     Connection conn= null;
+    int valitud = TulemustePrint.valitud;
     public Hinne(){
         looYhendus();
         looTabel();
@@ -25,13 +23,13 @@ public class Hinne {
             System.out.println("Kõik hästi");
             }
         }
-    private void looTabel() {
-        String sql = "CREATE TABLE IF NOT EXISTS(KESKMINE HINNE));";
+    public void looTabel() {
+        String sql = "CREATE TABLE IF NOT EXISTS KESKMINE (VALITUD INT));";
                 teostaAndmebaasiUuendus(sql);
 
     }
 
-    private void teostaAndmebaasiUuendus(String sql) {
+    public void teostaAndmebaasiUuendus(String sql) {
         try {
             Statement stat = conn.createStatement();
             stat.executeUpdate(sql);
@@ -40,5 +38,11 @@ public class Hinne {
             e.printStackTrace();
         }
     }
+    public void lisaArvud(){
+        String sql = "INSERT INTO TABEL KESKMINE (VALITUD) VALUES ('"+valitud+"')";
+        teostaAndmebaasiUuendus(sql);
+    }
+
+
 }
 

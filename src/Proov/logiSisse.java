@@ -13,7 +13,7 @@ import javafx.stage.Stage;
  */
 public class logiSisse {
     Stage stage = new Stage();
-
+    static String sina;
     logiSisse() {
         looAken();
 
@@ -28,7 +28,7 @@ public class logiSisse {
         PasswordField kasutajaParool = new PasswordField();
         Button sisene = new Button("Sisene");
         Label teade = new Label ();
-
+        sina = kasutajaNimi.getText();
         vbox.getChildren().addAll(kasutaja, kasutajaNimi, parool, kasutajaParool, sisene, teade);
 
         stage.setScene(scene);
@@ -39,6 +39,7 @@ public class logiSisse {
                     if (heaParool.equals("Hindeks5")) {
                         String sisestatudParool = kasutajaParool.getText();
                         System.out.println(sisestatudParool);
+                        System.out.println(sina);
                         stage.close();
                         new Tutvustus();
                     } else {
