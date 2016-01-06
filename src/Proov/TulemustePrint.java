@@ -20,11 +20,12 @@ import java.util.ArrayList;
  * Created by Annely on 5.01.2016.
  */
 public class TulemustePrint {
+    ArrayList<Integer> tulemused=Test.tulemused;
     ArrayList<Integer> populaarseim = Tulemused.populaarseim;
     static double valitud;
-    double keskmineHinne = Hinne.keskmineHinne;
 
     TulemustePrint(){
+
         looAken();
     }
 
@@ -37,11 +38,12 @@ public class TulemustePrint {
         Label soovitus = new Label ("Sinu tulemus:");
         soovitus.setFont(Font.font("Arial", FontWeight.BOLD, 20));
         pane.add(soovitus, 0, 0);
-
+        Label tagasiside = new Label("Kas soovitus pidas paika?");
+        tagasiside.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+        pane.add(tagasiside, 5, 0);
 
         VBox tabel = new VBox();
         ToggleGroup hinne = new ToggleGroup();
-        Label tagasiside = new Label("Kas soovitus pidas paika?");
         RadioButton yks = new RadioButton("1");
         RadioButton kaks = new RadioButton("2");
         RadioButton kolm = new RadioButton("3");
@@ -54,7 +56,7 @@ public class TulemustePrint {
         viis.setToggleGroup(hinne);
         Button hinda = new Button("Hinda");
 
-        tabel.getChildren().addAll(tagasiside, yks, kaks, kolm, neli, viis, hinda);
+        tabel.getChildren().addAll( yks, kaks, kolm, neli, viis, hinda);
         hinda.setOnAction(event -> {
                     if (yks.isSelected()) {
                         valitud = 1;
@@ -72,12 +74,16 @@ public class TulemustePrint {
                         valitud=5;
                         new Hinne();
                     }
-
-
+            String keskmineHinne = Hinne.keskmineHinneStringiks();
+            pane.getChildren().removeAll(tagasiside);
+            tabel.getChildren().removeAll( yks, kaks, kolm, neli, viis, hinda);
+            Label loplikHinneTekst = new Label("Testi keskmine hinne:");
+            Label loplikHinne = new Label(keskmineHinne);
+            loplikHinneTekst.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+            loplikHinne.setFont(Font.font("Arial", FontWeight.BOLD, 64));
+            pane.add(loplikHinne, 5, 1);
+            pane.add(loplikHinneTekst, 5, 0);
              });
-
-
-
 
         pane.add(tabel, 5, 1);
         lopp.setScene(lopetamine);
@@ -162,10 +168,18 @@ public class TulemustePrint {
 
     }
         else {
-            Label uus = new Label ("Liiga palju tulemusi, proovi veel");
+            Label uus = new Label ("Liiga palju tulemusi");
+            Label uus1 = new Label("Lower your standards and come again");
             Button tagasi = new Button("Tagasi algusesse");
             pane.add(uus, 0, 1);
-            pane.add(tagasi, 0, 2);
+            pane.add(uus1, 0, 2);
+            pane.add(tagasi, 0, 3);
+            tagasi.setOnAction(event -> {
+                populaarseim.clear();
+                tulemused.clear();
+                lopp.close();
+                new Test();
+            });
 
         }
 

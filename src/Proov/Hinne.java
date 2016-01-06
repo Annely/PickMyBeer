@@ -1,5 +1,6 @@
 package Proov;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -13,26 +14,29 @@ public class Hinne {
     static ArrayList<Integer> hinded = new ArrayList<>();
     static double keskmineHinne;
 
-    public Hinne(){
+    Hinne(){
         looYhendus();
         looTabel();
         lisaArvud();
         hangiHinded();
         arvutaKeskmine();
-
-
+        keskmineHinneStringiks();
 
     }
 
-    public double arvutaKeskmine() {
+    public static double arvutaKeskmine() {
         double summa =0;
         for (int i = 0; i < hinded.size(); i++) {
             summa += hinded.get(i);
             }
         keskmineHinne = summa/hinded.size();
         System.out.println(keskmineHinne);
+        keskmineHinne =Math.round(keskmineHinne*100)/100.0d;
+        System.out.println(keskmineHinne);
         return keskmineHinne;
-
+    }
+    public static String keskmineHinneStringiks(){
+        return String.valueOf(keskmineHinne);
     }
 
     private Connection looYhendus()  {
@@ -81,8 +85,6 @@ public class Hinne {
 
 
             while (rs.next()){
-                System.out.println(rs.getString("valitud"));
-
                 hinded.add(rs.getInt("valitud"));
             }
             return hinded;
