@@ -51,12 +51,6 @@ public class logiSisse {
                         teade.setText("Vale Parool!");
                     }
                 }
-
         );
     }
-
-
-
-
-
 }

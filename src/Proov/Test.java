@@ -320,18 +320,6 @@ public class Test {
             System.out.println(tulemused);
             test.close();
             new Tulemused();
-
-
-
-                     /**
-                * On ArrayList, mis koosneb numbritest 1-10
-                * Iga k�simuse iga vastus salvestab tulemusse teatud numbrid ArrayListist
-                * Tulemus kogub endasse need arvud ja leiab k�ige sagedamini esineva(d) numbri(d)
-                * J�rgmisel lehel t�lgitakse iga number �lleks
-                *
-                */
-
-
     });
 
 }

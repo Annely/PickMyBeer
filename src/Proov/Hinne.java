@@ -1,12 +1,11 @@
 package Proov;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 import java.sql.*;
 import java.util.ArrayList;
 
 /**
  * Created by Annely on 5.01.2016.
+ * Selle klassi juures oli abiks: https://www.youtube.com/watch?v=KRhv4iPgzHE
  */
 public class Hinne {
     Connection conn= null;
